@@ -12,9 +12,9 @@ export default function App() {
     let totalCurrentPrice = currentPrice * quantity;
     let totalInitialPrice = initialPrice * quantity;
     let profitLoss = totalCurrentPrice - totalInitialPrice;
-    if (currentPrice < 0 || initialPrice < 0 || quantity < 0) {
+    if (initialPrice <= 0 || quantity <= 0) {
       setMessage(
-        `Intial price, current price or quantity of stocks cannot be negative!`
+        `Initial price, current price or quantity of stocks cannot be negative or equal to zero!`
       );
     } else if (profitLoss > 0) {
       setMessage(
